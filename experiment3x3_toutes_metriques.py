@@ -232,7 +232,7 @@ class DetectionVsFixedTime3x3:
 
         columns = ['method', 'load', 'imbalance', 'max_green_time', 'mean_travel_time', 'mean_co2_emissions_travel', 'params']
         data_results = pd.DataFrame(results, columns=columns)
-        data_results.to_csv('~/Documents/Projets/smac-sumo/experiments/sumo/DSC-JFSMA 2024/test/data_3x3.csv')
+        data_results.to_csv('./data_3x3.csv')
 
 
     def plot_results(self):
@@ -240,7 +240,7 @@ class DetectionVsFixedTime3x3:
         if not os.path.exists(self.PLOT_FOLDER):
             os.makedirs(self.PLOT_FOLDER)
 
-        data = pd.read_csv('~/Documents/Projets/smac-sumo/experiments/sumo/DSC-JFSMA 2024/test/data_3x3.csv')
+        data = pd.read_csv('./data_3x3.csv')
 
         # Get potential and intensity
         nb_intervals = len(range(min(self.loads), max(self.loads), self.INTERVAL_METRICS))
